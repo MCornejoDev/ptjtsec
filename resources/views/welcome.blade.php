@@ -432,6 +432,7 @@
                     <input type="submit" value="Enviar">
                 </form>
             </div>
+            <hr>
             <div style="text-align: center">
                 <p>Añadir Actividad</p>
                 <form action="/activity/store" method="post">
@@ -442,6 +443,7 @@
                     <input type="submit" value="Enviar">
                 </form>
             </div>
+            <hr>
             <div style="text-align: center">
                 <p>Añadir Incidencia</p>
                 <form action="/incident/store" method="post">
@@ -452,6 +454,7 @@
                     <input type="submit" value="Enviar">
                 </form>
             </div>
+            <hr>
             <br>
             @php
                 //Generate a random role
@@ -467,7 +470,7 @@
                     <input type="submit" value="Enviar">
                 </form>
             </div>
-            <a href="">Asignar Usuario a Actividad</a>
+            <hr>
             <p>Asignar Usuario a Actividad con un rol aleaotorio permitido</p>
             <form action="/activity/1" method="post">
                 @csrf
@@ -475,6 +478,7 @@
                 <input type="hidden" name="user_id" value="1">
                 <input type="submit" value="Enviar">
             </form>
+            <hr>
             <a href="">Asignar Usuario a Incidencias</a>
             <a href="/project/1/users">Listar Participantes de un proyecto</a>
             <a href="/user/1/activities">Listar Actividades en las que participa un Usuario</a>

@@ -41,9 +41,9 @@ class ProjectController extends Controller
      */
     public function addUserToTheProject()
     {
-        $message = "Error with the action update in Project - User";
+        $message = "Error with the action insert in Project - User";
         $project_id = request()->route('id');
-        $data = request()->validate(
+        request()->validate(
             [
                 'role' => '',
                 'user_id' => ''

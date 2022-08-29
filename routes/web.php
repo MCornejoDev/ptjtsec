@@ -33,8 +33,7 @@ Route::get('/project/{id}/users', [ProjectController::class, 'getUsers']);
 
 //Routes for Activities
 Route::post('/activity/store', [ActivityController::class, 'store']);
-Route::post('/activity/{id}', [ProjectController::class, 'addUserToTheActivity']);
-
+Route::post('/activity/{id}', [ActivityController::class, 'addUserToTheActivity']);
 
 //Routes for Incidents
 Route::post('/incident/store', [IncidentController::class, 'store']);
