@@ -471,15 +471,16 @@
                 </form>
             </div>
             <hr>
-            <p>Asignar Usuario a Actividad con un rol aleaotorio permitido</p>
-            <form action="/activity/1" method="post">
-                @csrf
-                <input type="hidden" name="role" value="{{ $roles[$randomRole] }}">
-                <input type="hidden" name="user_id" value="1">
-                <input type="submit" value="Enviar">
-            </form>
+            <div>
+                <p>Asignar Usuario a Actividad con un rol aleaotorio permitido</p>
+                <form action="/activity/1" method="post">
+                    @csrf
+                    <input type="hidden" name="role" value="{{ $roles[$randomRole] }}">
+                    <input type="hidden" name="user_id" value="1">
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
             <hr>
-            <a href="">Asignar Usuario a Incidencias</a>
             <a href="/project/1/users">Listar Participantes de un proyecto</a>
             <a href="/user/1/activities">Listar Actividades en las que participa un Usuario</a>
             <a href="/user/1/incidents">Listar Incidencias a las que un usuario tiene acceso</a>
