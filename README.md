@@ -20,5 +20,5 @@ el comando `php artisan db:seed` .
 
 **3. Visualización de los datos en una vista**
 
-Aunque no era necesario, se ha añadido a modo de visualización una vista que realiza los casos de uso.
+Aunque no era necesario, se ha añadido a modo de visualización una vista que realiza algunos de los casos de uso.
 
