@@ -451,10 +451,31 @@
                     <input type="hidden" name="activity_id" value="1">
                     <input type="submit" value="Enviar">
                 </form>
-                </form>
             </div>
             <br>
-            <a href="">Asignar Usuarios a Proyectos, Actividades e Incidencias</a>
+            @php
+                //Generate a random role
+                $roles = ['responsible', 'member'];
+                $randomRole = array_rand($roles);
+            @endphp
+            <div>
+                <p>Añadir usuario a un proyecto con un rol aleaotorio permitido</p>
+                <form action="/project/1" method="post">
+                    @csrf
+                    <input type="hidden" name="role" value="{{ $roles[$randomRole] }}">
+                    <input type="hidden" name="user_id" value="1">
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+            <a href="">Asignar Usuario a Actividad</a>
+            <p>Asignar Usuario a Actividad con un rol aleaotorio permitido</p>
+            <form action="/activity/1" method="post">
+                @csrf
+                <input type="hidden" name="role" value="{{ $roles[$randomRole] }}">
+                <input type="hidden" name="user_id" value="1">
+                <input type="submit" value="Enviar">
+            </form>
+            <a href="">Asignar Usuario a Incidencias</a>
             <a href="/project/1/users">Listar Participantes de un proyecto</a>
             <a href="/user/1/activities">Listar Actividades en las que participa un Usuario</a>
             <a href="/user/1/incidents">Listar Incidencias a las que un usuario tiene acceso</a>

@@ -39,10 +39,5 @@ class ProjectTest extends TestCase
     public function member_list_of_project()
     {
         $this->withoutExceptionHandling();
-
-        $idRandom = Factory::create()->numberBetween('1', '4');
-
-        $response = $this->get('/project/1/users');
-        dd($response);
     }
 }

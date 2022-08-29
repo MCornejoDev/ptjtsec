@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Carbon\Carbon;
 use Faker\Factory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -30,6 +31,35 @@ class ProjectController extends Controller
 
         if ($project->save()) {
             $message = "New Row Project Added Succesfully";
+        }
+
+        return redirect("/")->with('status', $message);
+    }
+
+    /**
+     * This function executing a insert for add users to the project
+     */
+    public function addUserToTheProject()
+    {
+        $message = "Error with the action update in Project - User";
+        $project_id = request()->route('id');
+        $data = request()->validate(
+            [
+                'role' => '',
+                'user_id' => ''
+            ]
+        );
+
+        $query = DB::table('project_user')->insertGetId([
+            'roles' => request()->role,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'project_id' => $project_id,
+            'user_id' => request()->user_id
+        ]);
+
+        if ($query) {
+            $message = "New Row Project - User Added Succesfully";
         }
 
         return redirect("/")->with('status', $message);

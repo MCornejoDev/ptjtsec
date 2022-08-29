@@ -23,16 +23,18 @@ Route::get('/', function () {
 });
 
 //Routes for Users
-// Route::get('/users', [UserController::class, 'index']);
 Route::get('/user/{id}/activities', [UserController::class, 'getActivities']);
 Route::get('/user/{id}/incidents', [UserController::class, 'getIncidents']);
 
 //Routes for Projects
-Route::get('/project/{id}/users', [ProjectController::class, 'getUsers']);
 Route::post('/project/store', [ProjectController::class, 'store']);
+Route::post('/project/{id}', [ProjectController::class, 'addUserToTheProject']);
+Route::get('/project/{id}/users', [ProjectController::class, 'getUsers']);
 
 //Routes for Activities
 Route::post('/activity/store', [ActivityController::class, 'store']);
+Route::post('/activity/{id}', [ProjectController::class, 'addUserToTheActivity']);
+
 
 //Routes for Incidents
 Route::post('/incident/store', [IncidentController::class, 'store']);
