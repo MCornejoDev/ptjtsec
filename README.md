@@ -22,3 +22,4 @@ el comando `php artisan db:seed` .
 
 Aunque no era necesario, se ha añadido a modo de visualización una vista que realiza algunos de los casos de uso.
 
+Se recomienda la instalación de la extensión [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=es) para el navegador.
